@@ -79,15 +79,27 @@ export default {
 
 <style lang="scss">
 .sections-mint-main {
-  background-image: url("/images/page-bg/mint-top.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: space-between;
   padding: em(107) em(135) 0;
+  position: relative;
+
+  &:before {
+    background-image: url("/images/page-bg/mint-top.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: em(950);
+    z-index: 1;
+    content: "";
+  }
 
   &__content {
     position: relative;
+    z-index: 2;
     width: em(630);
     padding: em(47) em(120) em(50);
 
@@ -139,6 +151,8 @@ export default {
 
   &__card {
     width: em(368);
+    position: relative;
+    z-index: 2;
   }
 
   &__font {

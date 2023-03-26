@@ -1,35 +1,37 @@
 <template>
   <section class="sections-mint-benefits">
-    <div
-      class="sections-mint-benefits__title sections-mint-benefits__title--top"
-    >
-      <span
-        class="sections-mint-benefits__font sections-mint-benefits__font--title"
+    <div class="sections-mint-benefits__container">
+      <div
+        class="sections-mint-benefits__title sections-mint-benefits__title--top"
       >
-        LEGION UNIVERSE
-      </span>
-    </div>
+        <span
+          class="sections-mint-benefits__font sections-mint-benefits__font--title"
+        >
+          LEGION UNIVERSE
+        </span>
+      </div>
 
-    <div
-      class="sections-mint-benefits__title sections-mint-benefits__title--bottom"
-    >
-      <span
-        class="sections-mint-benefits__font sections-mint-benefits__font--title"
+      <div
+        class="sections-mint-benefits__title sections-mint-benefits__title--bottom"
       >
-        DTC BENEFITS
-      </span>
-    </div>
+        <span
+          class="sections-mint-benefits__font sections-mint-benefits__font--title"
+        >
+          DTC BENEFITS
+        </span>
+      </div>
 
-    <div class="sections-mint-benefits__cards">
-      <template v-for="(card, index) in cards" :key="index">
-        <CardsBenefit
-          class="sections-mint-benefits__card"
-          :title="card.title"
-          :text="card.text"
-          :image="card.image"
-          :side="index % 2 === 0 ? 'left' : 'right'"
-        />
-      </template>
+      <div class="sections-mint-benefits__cards">
+        <template v-for="(card, index) in cards" :key="index">
+          <CardsBenefit
+            class="sections-mint-benefits__card"
+            :title="card.title"
+            :text="card.text"
+            :image="card.image"
+            :side="index % 2 === 0 ? 'left' : 'right'"
+          />
+        </template>
+      </div>
     </div>
   </section>
 </template>
@@ -52,11 +54,26 @@ export default {
 
 <style lang="scss">
 .sections-mint-benefits {
+  position: relative;
   padding: 0 em(135) em(120);
-  background-image: url("/images/page-bg/mint-bottom.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-x: hidden;
+
+  &:before {
+    background-image: url("/images/page-bg/mint-bottom.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: em(500);
+    left: 0;
+    width: 100%;
+    height: em(1800);
+    z-index: 1;
+    content: "";
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
 
   &__title {
     position: relative;

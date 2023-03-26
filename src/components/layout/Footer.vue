@@ -41,6 +41,7 @@ export default {
   justify-content: space-between;
   padding: em(31) 0 em(52);
   border-top: 1px solid $color-white;
+  background-color: transparent;
 
   &__logo {
     width: em(143);

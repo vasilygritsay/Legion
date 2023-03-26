@@ -2,7 +2,9 @@
   <div class="pages-mint">
     <SectionsMintMain class="pages-mint__section pages-mint__section--main" />
     <SectionsMintPacks class="pages-mint__section pages-mint__section--packs" />
-    <SectionsMintBenefits class="pages-mint__section pages-mint__section" />
+    <SectionsMintBenefits
+      class="pages-mint__section pages-mint__section--benefits"
+    />
   </div>
 </template>
 
@@ -26,6 +28,10 @@ export default {
 
     &--packs {
       margin-bottom: em(84);
+    }
+
+    &--benefits {
+      z-index: 2;
     }
   }
 }

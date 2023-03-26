@@ -1,52 +1,56 @@
 <template>
   <section class="sections-mint-packs">
-    <div class="sections-mint-packs__title-wrapper">
-      <div class="sections-mint-packs__title">
-        <span
-          class="sections-mint-packs__font sections-mint-packs__font--title"
-        >
-          BONUS PACKS
-        </span>
+    <div class="sections-mint-packs__container">
+      <div class="sections-mint-packs__title-wrapper">
+        <div class="sections-mint-packs__title">
+          <span
+            class="sections-mint-packs__font sections-mint-packs__font--title"
+          >
+            BONUS PACKS
+          </span>
+        </div>
+
+        <div class="sections-mint-packs__text">
+          <span
+            class="sections-mint-packs__font sections-mint-packs__font--text"
+          >
+            Qualify for the following Bonus Packs by purchasing the Bonus Pack
+            number of Legion Universe Digital Trading Cards. A Bonus Pack gives
+            you additional physical bonuses (items mailed to you) as well as
+            potential opportunities to join with us in the physical production
+            and premiers of the films.
+          </span>
+        </div>
       </div>
 
-      <div class="sections-mint-packs__text">
-        <span class="sections-mint-packs__font sections-mint-packs__font--text">
-          Qualify for the following Bonus Packs by purchasing the Bonus Pack
-          number of Legion Universe Digital Trading Cards. A Bonus Pack gives
-          you additional physical bonuses (items mailed to you) as well as
-          potential opportunities to join with us in the physical production and
-          premiers of the films.
-        </span>
-      </div>
-    </div>
-
-    <div class="sections-mint-packs__content">
-      <template v-for="(pack, index) in packs" :key="index">
-        <IconList
-          class="sections-mint-packs__list"
-          :icon-name="pack.iconName"
-          :title="pack.title"
-          :list="pack.list"
-        />
-      </template>
-    </div>
-
-    <div class="sections-mint-packs__interrupter">
-      <div class="sections-mint-packs__interrupter-title">
-        <span
-          class="sections-mint-packs__font sections-mint-packs__font--interrupter-title"
-        >
-          Buy 50 Digital Trading Cards
-        </span>
+      <div class="sections-mint-packs__content">
+        <template v-for="(pack, index) in packs" :key="index">
+          <IconList
+            class="sections-mint-packs__list"
+            :icon-name="pack.iconName"
+            :title="pack.title"
+            :list="pack.list"
+          />
+        </template>
       </div>
 
-      <div class="sections-mint-packs__interrupter-text">
-        <span
-          class="sections-mint-packs__font sections-mint-packs__font--interrupter-text"
-        >
-          and you are guranteed receive an invitation to attend a RED CARPET
-          PREMIER SCREENING for one of the films
-        </span>
+      <div class="sections-mint-packs__interrupter">
+        <div class="sections-mint-packs__interrupter-title">
+          <span
+            class="sections-mint-packs__font sections-mint-packs__font--interrupter-title"
+          >
+            Buy 50 Digital Trading Cards
+          </span>
+        </div>
+
+        <div class="sections-mint-packs__interrupter-text">
+          <span
+            class="sections-mint-packs__font sections-mint-packs__font--interrupter-text"
+          >
+            and you are guranteed receive an invitation to attend a RED CARPET
+            PREMIER SCREENING for one of the films
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -68,10 +72,26 @@ export default {
 
 <style lang="scss">
 .sections-mint-packs {
+  position: relative;
   padding: 0 em(135);
-  background-image: url("/images/page-bg/mint-bottom.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  &:before {
+    background-image: url("/images/page-bg/mint-middle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: em(150);
+    left: 0;
+    width: 100%;
+    height: em(1800);
+    z-index: 1;
+    content: "";
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
 
   &__title-wrapper {
     display: flex;
