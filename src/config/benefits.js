@@ -1,7 +1,7 @@
 export default [
   {
     title: "Film Productions",
-    text: "You will have access to cast and crew interviews, be able to see the day-to-day activities and even participate in the creative aspects through your ability to vote.",
+    text: "You will have access to cast and crew interviews, be able to see the day-to-day activities and even participate in the creative aspects including outfit of characters, designs of creatives and sets through your ability to vote.",
     image: "film",
   },
   {
