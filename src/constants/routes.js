@@ -1,7 +1,7 @@
 export default {
   MAIN: "/",
   ROADMAP: "/roadmap",
-  MINT: "/minting",
+  MINT: "/mint",
   ABOUT: "/about",
   TERMS: "/terms",
   PRIVACY: "/privacy",

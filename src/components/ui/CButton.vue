@@ -78,6 +78,14 @@ export default {
     display: none;
   }
 
+  &__icon-wrapper {
+    &--left {
+      &:not(:empty) {
+        margin-right: em(28);
+      }
+    }
+  }
+
   &--withLines {
     padding: em(20) 0;
     &:before,
@@ -127,6 +135,15 @@ export default {
           background-repeat: no-repeat;
         }
       }
+    }
+
+    &--bordered {
+      display: flex;
+      align-items: center;
+      padding: 0 em(20);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: em(2) solid $color-accent;
+      border-radius: em(10);
     }
   }
 }
