@@ -4,11 +4,11 @@ export default {
   header: [
     {
       text: "Roadmap",
-      to: routes.ROADMAP,
+      to: routes.MINT,
     },
     {
       text: "About",
-      to: routes.ABOUT,
+      to: routes.THANKS,
     },
   ],
 
