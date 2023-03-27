@@ -37,6 +37,10 @@ export default {
   position: relative;
   padding: em(121) 0 em(230);
 
+  @include mobile {
+    padding: em(66) 0 em(210);
+  }
+
   &:before {
     background-image: url("/images/page-bg/thanks.png");
     background-repeat: no-repeat;
@@ -48,6 +52,13 @@ export default {
     height: em(950);
     z-index: 1;
     content: "";
+
+    @include mobile {
+      top: em(57);
+      left: em(-245);
+      width: 270%;
+      height: em(742);
+    }
   }
 
   &__wrapper {
@@ -74,6 +85,11 @@ export default {
     max-width: em(515);
     text-align: center;
     margin-bottom: em(73);
+
+    @include mobile {
+      max-width: em(309);
+      margin-bottom: em(96);
+    }
   }
 
   &__button {
@@ -86,6 +102,11 @@ export default {
       font-family: Squada One, sans-serif;
       font-size: em(115, 32);
       line-height: em(158, 115);
+
+      @include mobile {
+        font-size: em(55, 32);
+        line-height: em(66, 55);
+      }
     }
 
     &--text {
