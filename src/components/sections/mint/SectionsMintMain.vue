@@ -84,6 +84,11 @@ export default {
   padding: em(107) em(135) 0;
   position: relative;
 
+  @include mobile {
+    padding: em(20) em(10) 0;
+    flex-direction: column;
+  }
+
   &:before {
     background-image: url("/images/page-bg/mint-top.png");
     background-repeat: no-repeat;
@@ -95,6 +100,10 @@ export default {
     height: em(950);
     z-index: 1;
     content: "";
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__content {
@@ -102,6 +111,11 @@ export default {
     z-index: 2;
     width: em(630);
     padding: em(47) em(120) em(50);
+
+    @include mobile {
+      width: 100%;
+      padding: em(20) em(26) em(40);
+    }
 
     &:before {
       position: absolute;
@@ -115,6 +129,10 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       z-index: 1;
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 

@@ -39,6 +39,10 @@ export default {
     position: relative;
     z-index: 10;
     margin: auto em(135) 0;
+
+    @include mobile {
+      margin: auto em(10) 0;
+    }
   }
 }
 </style>

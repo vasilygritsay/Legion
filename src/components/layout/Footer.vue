@@ -43,8 +43,17 @@ export default {
   border-top: 1px solid $color-white;
   background-color: transparent;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   &__logo {
     width: em(143);
+
+    @include mobile {
+      width: em(119);
+      margin-bottom: em(26);
+    }
   }
 
   &__nav {
@@ -55,6 +64,17 @@ export default {
   &__button {
     &:not(:last-child) {
       margin-right: em(45);
+
+      @include mobile {
+        margin-right: em(24);
+      }
+    }
+  }
+
+  &__font {
+    &--button {
+      font-size: em(12);
+      line-height: em(21, 12);
     }
   }
 }
