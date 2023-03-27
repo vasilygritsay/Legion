@@ -92,7 +92,7 @@ export default {
     content: "";
 
     @include mobile {
-      display: none;
+      top: em(-70);
     }
   }
 

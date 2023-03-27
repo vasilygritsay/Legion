@@ -10,14 +10,14 @@ const defaultFont = 16;
 const desktopConfig = {
   defaultWidth: 1440,
   minWidth: 768,
-  defaultHeight: 700,
+  defaultHeight: 0,
   minHeight: 0,
 };
 
 const mobileConfig = {
   defaultWidth: 375,
   minWidth: 280,
-  defaultHeight: 600,
+  defaultHeight: 0,
   minHeight: 200,
 };
 

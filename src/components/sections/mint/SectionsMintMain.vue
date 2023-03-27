@@ -1,5 +1,10 @@
 <template>
   <section class="sections-mint-main">
+    <img
+      class="sections-mint-main__bg"
+      src="/images/bg/left-bottom-corner-mobile.png"
+      alt="bg"
+    />
     <div class="sections-mint-main__content">
       <div class="sections-mint-main__container">
         <div class="sections-mint-main__title">
@@ -102,7 +107,9 @@ export default {
     content: "";
 
     @include mobile {
-      display: none;
+      top: em(200);
+      width: 192%;
+      height: em(1050);
     }
   }
 
@@ -132,14 +139,22 @@ export default {
       z-index: 1;
 
       @include mobile {
-        width: em(580);
-        left: em(10);
-        right: em(10);
-        height: em(800);
-        transform: translateX(-15%);
-        background-size: auto;
-        background-image: url("/images/bg/left-bottom-corner-mobile.png");
+        display: none;
       }
+    }
+  }
+
+  &__bg {
+    display: none;
+
+    @include mobile {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      transform: translateX(-50%);
+      top: em(-72);
+      width: 140%;
+      display: block;
     }
   }
 

@@ -57,7 +57,11 @@ export default {
       top: em(57);
       left: em(-245);
       width: 270%;
-      height: em(742);
+      height: em(1030);
+    }
+
+    @media screen and (max-width: 425px) {
+      height: em(740);
     }
   }
 
