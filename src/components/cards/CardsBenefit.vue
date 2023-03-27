@@ -55,9 +55,20 @@ export default {
   display: flex;
   justify-content: center;
 
+  @include mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   &__content {
     padding-top: em(39);
     width: em(313);
+
+    @include mobile {
+      position: relative;
+      z-index: 2;
+      padding-top: 0;
+    }
   }
 
   &__title {
@@ -68,6 +79,11 @@ export default {
     width: em(409);
     height: em(307);
     border-radius: em(10);
+
+    @include mobile {
+      width: em(314);
+      height: em(235);
+    }
   }
 
   &__font {
@@ -85,31 +101,79 @@ export default {
 
   &--side {
     &--left {
+      position: relative;
       background-image: url("/images/bg/card-left.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
       padding: em(30) em(30) em(30) em(87);
 
+      @include mobile {
+        background-image: none;
+        padding: 0 em(20) em(20);
+
+        &:before {
+          background-image: url("/images/bg/card-mobile.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: em(-17);
+          left: 0;
+          z-index: 1;
+          content: "";
+          width: 103%;
+          height: em(612);
+        }
+      }
+
       #{$parent} {
         &__content {
           order: 1;
           margin-right: em(70);
+
+          @include mobile {
+            order: 2;
+            margin-right: 0;
+          }
         }
 
         &__image {
           order: 2;
+
+          @include mobile {
+            order: 1;
+            margin-bottom: em(23);
+          }
         }
       }
     }
 
     &--right {
+      position: relative;
       background-image: url("/images/bg/card-right.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
       padding: em(30) em(87) em(30) em(30);
 
+      @include mobile {
+        background-image: none;
+        padding: 0 em(20) em(20);
+
+        &:before {
+          background-image: url("/images/bg/card-mobile.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: em(-17);
+          left: 0;
+          z-index: 1;
+          content: "";
+          width: 103%;
+          height: em(612);
+        }
+      }
+
       #{$parent} {
         &__content {
           order: 2;
@@ -118,6 +182,10 @@ export default {
         &__image {
           order: 1;
           margin-right: em(70);
+
+          @include mobile {
+            margin-bottom: em(23);
+          }
         }
       }
     }

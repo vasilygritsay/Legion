@@ -75,6 +75,10 @@ export default {
   position: relative;
   padding: 0 em(135);
 
+  @include mobile {
+    padding: 0 em(20);
+  }
+
   &:before {
     background-image: url("/images/page-bg/mint-middle.png");
     background-repeat: no-repeat;
@@ -86,6 +90,10 @@ export default {
     height: em(1800);
     z-index: 1;
     content: "";
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__container {
@@ -97,11 +105,22 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: em(48);
+
+    @include mobile {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: em(42);
+    }
   }
 
   &__content {
     display: flex;
     margin-bottom: em(112);
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: em(161);
+    }
   }
 
   &__list {
@@ -109,6 +128,11 @@ export default {
 
     &:not(:last-child) {
       margin-right: em(52);
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: em(43);
+      }
     }
   }
 
@@ -122,6 +146,10 @@ export default {
     -webkit-text-fill-color: transparent;
     margin-right: em(41);
     white-space: nowrap;
+
+    @include mobile {
+      margin-bottom: em(50);
+    }
   }
 
   &__interrupter {
@@ -133,16 +161,33 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: em(121) 0 em(65);
+
+    @include mobile {
+      padding: em(121) 0 em(99);
+      width: calc(100% + #{em(20)});
+      margin-left: em(-10);
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   &__interrupter-title {
     text-align: center;
     max-width: em(500);
+
+    @include mobile {
+      max-width: em(293);
+      margin-bottom: em(15);
+    }
   }
 
   &__interrupter-text {
     text-align: center;
     max-width: em(500);
+
+    @include mobile {
+      max-width: em(293);
+    }
   }
 
   &__font {
@@ -150,6 +195,11 @@ export default {
       font-family: Squada One, sans-serif;
       font-size: em(95);
       line-height: em(158, 95);
+
+      @include mobile {
+        font-size: em(55);
+        line-height: 1;
+      }
     }
 
     &--text {
@@ -161,11 +211,21 @@ export default {
       font-family: Squada One, sans-serif;
       font-size: em(75);
       line-height: em(81, 75);
+
+      @include mobile {
+        font-size: em(55);
+        line-height: em(66, 55);
+      }
     }
 
     &--interrupter-text {
       font-size: em(20);
       line-height: em(39, 20);
+
+      @include mobile {
+        font-size: em(15);
+        line-height: em(26, 15);
+      }
     }
   }
 }

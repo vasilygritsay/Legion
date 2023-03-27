@@ -85,7 +85,7 @@ export default {
   position: relative;
 
   @include mobile {
-    padding: em(20) em(10) 0;
+    padding: em(12) em(10) 0;
     flex-direction: column;
   }
 
@@ -114,7 +114,8 @@ export default {
 
     @include mobile {
       width: 100%;
-      padding: em(20) em(26) em(40);
+      padding: em(30) em(26) em(40);
+      margin-bottom: em(49);
     }
 
     &:before {
@@ -131,7 +132,13 @@ export default {
       z-index: 1;
 
       @include mobile {
-        width: 100%;
+        width: em(580);
+        left: em(10);
+        right: em(10);
+        height: em(800);
+        transform: translateX(-15%);
+        background-size: auto;
+        background-image: url("/images/bg/left-bottom-corner-mobile.png");
       }
     }
   }
@@ -146,6 +153,10 @@ export default {
 
   &__title {
     margin-bottom: em(25);
+
+    @include mobile {
+      margin-bottom: em(45);
+    }
   }
 
   &__button {
@@ -153,6 +164,10 @@ export default {
       width: em(271);
       height: em(85);
       margin-bottom: em(61);
+
+      @include mobile {
+        margin-bottom: em(50);
+      }
     }
 
     &--buy {
@@ -171,6 +186,11 @@ export default {
     width: em(368);
     position: relative;
     z-index: 2;
+
+    @include mobile {
+      width: em(271);
+      margin: 0 auto;
+    }
   }
 
   &__font {
@@ -178,6 +198,11 @@ export default {
       font-family: Squada One, sans-serif;
       font-size: em(64);
       line-height: em(110, 64);
+
+      @include mobile {
+        font-size: em(42);
+        line-height: 1;
+      }
     }
 
     &--connect {

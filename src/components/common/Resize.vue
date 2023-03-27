@@ -15,7 +15,7 @@ const desktopConfig = {
 };
 
 const mobileConfig = {
-  defaultWidth: 360,
+  defaultWidth: 375,
   minWidth: 280,
   defaultHeight: 600,
   minHeight: 200,

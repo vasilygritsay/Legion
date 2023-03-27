@@ -57,6 +57,10 @@ export default {
   position: relative;
   padding: 0 em(135) em(120);
 
+  @include mobile {
+    padding: 0 em(10) em(146);
+  }
+
   &:before {
     background-image: url("/images/page-bg/mint-bottom.png");
     background-repeat: no-repeat;
@@ -68,6 +72,10 @@ export default {
     height: em(1800);
     z-index: 1;
     content: "";
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__container {
@@ -87,8 +95,16 @@ export default {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
+      @include mobile {
+        padding-left: em(10);
+      }
+
       &:before {
         right: em(-280);
+
+        @include mobile {
+          right: em(-102);
+        }
       }
     }
 
@@ -103,8 +119,16 @@ export default {
       -webkit-text-fill-color: transparent;
       margin-bottom: em(64);
 
+      @include mobile {
+        padding-left: em(77);
+      }
+
       &:before {
         left: em(-280);
+
+        @include mobile {
+          left: em(-44);
+        }
       }
     }
 
@@ -117,6 +141,12 @@ export default {
       transform: translateY(-50%);
       border: 1px solid $color-white;
       border-radius: em(10);
+
+      @include mobile {
+        width: em(103);
+        height: em(36);
+        border-radius: em(5);
+      }
     }
   }
 
@@ -129,8 +159,17 @@ export default {
   &__card {
     width: em(910);
 
+    @include mobile {
+      width: 100%;
+      height: em(597);
+    }
+
     &:not(:last-child) {
       margin-bottom: em(30);
+
+      @include mobile {
+        margin-bottom: em(20);
+      }
     }
   }
 
@@ -139,6 +178,11 @@ export default {
       font-family: Squada One, sans-serif;
       font-size: em(161);
       line-height: em(188, 161);
+
+      @include mobile {
+        font-size: em(55);
+        line-height: em(66, 55);
+      }
     }
   }
 }

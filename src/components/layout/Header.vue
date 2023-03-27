@@ -57,10 +57,12 @@ export default {
   }
 
   &__logo-wrapper {
-    position: absolute;
-    left: 50%;
-    top: em(10);
-    transform: translateX(-50%);
+    @include mobile {
+      position: absolute;
+      left: 50%;
+      top: em(10);
+      transform: translateX(-50%);
+    }
   }
 
   &__logo {
@@ -103,6 +105,11 @@ export default {
     width: em(24);
     height: em(20);
     margin-left: auto;
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__line {

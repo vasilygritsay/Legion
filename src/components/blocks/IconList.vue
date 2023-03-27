@@ -8,26 +8,28 @@
       />
     </div>
 
-    <div class="icon-list__title">
-      <span class="icon-list__font icon-list__font--title">
-        {{ title }}
-      </span>
-    </div>
+    <div class="icon-list__list-wrapper">
+      <div class="icon-list__title">
+        <span class="icon-list__font icon-list__font--title">
+          {{ title }}
+        </span>
+      </div>
 
-    <ul class="icon-list__items">
-      <template v-for="(item, index) in list" :key="index">
-        <li class="icon-list__item">
-          <span class="icon-list__font icon-list__font--number">
-            {{ listNumber(index) }}
-          </span>
-          <div class="icon-list__text-wrapper">
-            <span class="icon-list__font icon-list__font--item">
-              {{ item }}
+      <ul class="icon-list__items">
+        <template v-for="(item, index) in list" :key="index">
+          <li class="icon-list__item">
+            <span class="icon-list__font icon-list__font--number">
+              {{ listNumber(index) }}
             </span>
-          </div>
-        </li>
-      </template>
-    </ul>
+            <div class="icon-list__text-wrapper">
+              <span class="icon-list__font icon-list__font--item">
+                {{ item }}
+              </span>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -58,6 +60,10 @@ export default {
 
 <style lang="scss">
 .icon-list {
+  @include mobile {
+    display: flex;
+  }
+
   &__icon-wrapper {
     background-image: url("/images/bg/icon-wrapper-transparent.png");
     background-repeat: no-repeat;
@@ -68,11 +74,23 @@ export default {
     width: em(64);
     height: em(65);
     margin-bottom: em(22);
+    flex-shrink: 0;
+
+    @include mobile {
+      margin-right: em(20);
+      margin-bottom: 0;
+    }
   }
 
   &__icon {
     width: em(50);
     height: em(38);
+  }
+
+  &__list-wrapper {
+    @include mobile {
+      margin-top: em(18);
+    }
   }
 
   &__title {

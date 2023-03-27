@@ -24,10 +24,18 @@ export default {
   &__section {
     &--main {
       margin-bottom: em(143);
+
+      @include mobile {
+        margin-bottom: em(166);
+      }
     }
 
     &--packs {
       margin-bottom: em(84);
+
+      @include mobile {
+        margin-bottom: em(151);
+      }
     }
 
     &--benefits {
