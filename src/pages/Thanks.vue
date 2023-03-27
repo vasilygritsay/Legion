@@ -14,7 +14,12 @@
         </span>
       </div>
 
-      <CButton class="thanks-page__button" theme="primary" with-lines>
+      <CButton
+        class="thanks-page__button"
+        theme="primary"
+        with-lines
+        @click="share"
+      >
         <span class="thanks-page__font thanks-page__font--button">
           Share on twitter
         </span>
@@ -24,11 +29,32 @@
 </template>
 
 <script>
+import { share } from "@/tools/helpers.js";
+
 import CButton from "@/components/ui/CButton.vue";
 
 export default {
   name: "Thanks",
   components: { CButton },
+  data() {
+    return {
+      url: "http://localhost:5173",
+    };
+  },
+  methods: {
+    share() {
+      share(
+        "tw",
+        this.url,
+        {
+          title:
+            "Already copped up my NFT with Legion. Who else is getting one? 🔥",
+          image: this.url + "/images/share.jpg",
+        },
+        () => {}
+      );
+    },
+  },
 };
 </script>
 

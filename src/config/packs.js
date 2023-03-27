@@ -23,11 +23,16 @@ export default [
       "All items from previous packages",
       "Receive a LEGION ORDINAL!",
       "Receive an invitation to attend a RED CARPET PREMIER SCREENING for one of the films",
+      "On set site visit and cameo role in one of the films!",
     ],
   },
   {
     iconName: "100",
     title: "Legion 100 Pack",
-    list: ["All items from previous packages", "Receive TWO LEGION ORDINALS!"],
+    list: [
+      "Monthly calls with investment experts to discuss economic climate, deals and have dialogue for growth and protection of wealth",
+      "Access to highly exclusive investments, funds, venture capital, film, real estate and more investment deals that are not generally available to the public",
+      "Get potential access to capital for deals and/or companies that make sense for our funds",
+    ],
   },
 ];
