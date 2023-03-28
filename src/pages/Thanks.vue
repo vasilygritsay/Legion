@@ -36,20 +36,15 @@ import CButton from "@/components/ui/CButton.vue";
 export default {
   name: "Thanks",
   components: { CButton },
-  data() {
-    return {
-      url: "http://localhost:5173",
-    };
-  },
   methods: {
     share() {
       share(
         "tw",
-        this.url,
+        import.meta.env.VITE_APP_URL,
         {
           title:
             "Already copped up my NFT with Legion. Who else is getting one? 🔥",
-          image: this.url + "/images/share.jpg",
+          image: import.meta.env.VITE_APP_URL + "/images/share.jpg",
         },
         () => {}
       );
