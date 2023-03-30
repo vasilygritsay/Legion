@@ -72,6 +72,16 @@ export default {
     font-weight: 600;
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
   &__arrow {
     height: em(8);
 

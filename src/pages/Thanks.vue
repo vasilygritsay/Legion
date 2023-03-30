@@ -42,8 +42,7 @@ export default {
         "tw",
         import.meta.env.VITE_APP_URL,
         {
-          title:
-            "Already copped up my NFT with Legion. Who else is getting one? 🔥",
+          title: "Already copped up my Legion NFT. Who else is getting one?",
           image: import.meta.env.VITE_APP_URL + "/images/share.jpg",
         },
         () => {}

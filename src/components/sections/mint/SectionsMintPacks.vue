@@ -35,6 +35,12 @@
       </div>
 
       <div class="sections-mint-packs__interrupter">
+        <img
+          class="sections-mint-packs__interrupter-bg"
+          src="/images/page-bg/interrupter.png"
+          alt="bg"
+        />
+
         <div class="sections-mint-packs__interrupter-title">
           <span
             class="sections-mint-packs__font sections-mint-packs__font--interrupter-title"
@@ -47,8 +53,28 @@
           <span
             class="sections-mint-packs__font sections-mint-packs__font--interrupter-text"
           >
-            and you are guranteed receive an invitation to attend a RED CARPET
-            PREMIER SCREENING for one of the films
+            You are guaranteed to receive an opportunity for a
+            <span class="sections-mint-packs__interrupter-accent">
+              CAMEO ROLE
+            </span>
+            in one of the <br />
+            films as well as an invitation to one of the
+            <span class="sections-mint-packs__interrupter-accent">
+              RED CARPET SCREENINGS!
+            </span>
+          </span>
+        </div>
+
+        <div class="sections-mint-packs__interrupter-text">
+          <span
+            class="sections-mint-packs__font sections-mint-packs__font--interrupter-text"
+          >
+            <span class="sections-mint-packs__interrupter-accent">PLUS</span> an
+            in person dinner with producers, directors, writers and VFX.
+            <span class="sections-mint-packs__interrupter-accent">PLUS</span>
+            with the investment <br />
+            club, access to information, investments and funds thatare not
+            available to the general public.
           </span>
         </div>
       </div>
@@ -115,7 +141,7 @@ export default {
 
   &__content {
     display: flex;
-    margin-bottom: em(112);
+    margin-bottom: em(200);
 
     @include mobile {
       flex-direction: column;
@@ -153,9 +179,7 @@ export default {
   }
 
   &__interrupter {
-    background-image: url("/images/page-bg/interrupter.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     border-radius: em(20);
     display: flex;
     flex-direction: column;
@@ -171,23 +195,42 @@ export default {
     }
   }
 
+  &__interrupter-bg {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-60%);
+    left: 0;
+    width: 100%;
+    height: 142%;
+    object-fit: contain;
+  }
+
   &__interrupter-title {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    max-width: em(500);
 
     @include mobile {
-      max-width: em(293);
       margin-bottom: em(15);
     }
   }
 
   &__interrupter-text {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    max-width: em(500);
 
     @include mobile {
       max-width: em(293);
     }
+  }
+
+  &__interrupter-accent {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: $color-accent;
   }
 
   &__font {

@@ -31,7 +31,7 @@ export default {
     }
 
     &--packs {
-      margin-bottom: em(84);
+      margin-bottom: em(168);
 
       @include mobile {
         margin-bottom: em(151);
