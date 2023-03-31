@@ -1,0 +1,13 @@
+{
+    "name": "LeftOverz Solana",
+    "symbol": "LOS",
+    "uri": "https://bafybeid4ahh2mulbrnd452ee3tuzkegghez7khltwgc6yvx5m3pplzi66y.ipfs.dweb.link/collection.json",
+    "seller_fee_basis_points": 1000,
+    "creators": [
+        {
+            "address": "BsTdXNt38ozSns7xv1nocBUB9TUYJRRPtAgQdZ42ebLV",
+            "verified": false,
+            "share": 100
+        }
+    ]
+}
