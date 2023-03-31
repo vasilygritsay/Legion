@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: em(31) 0 em(52);
+  border-top: 1px solid $color-white;
+  background-color: transparent;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__logo {
+    width: em(143);
+
+    @include mobile {
+      width: em(119);
+      margin-bottom: em(26);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    &:not(:last-child) {
+      margin-right: em(45);
+
+      @include mobile {
+        margin-right: em(24);
+      }
+    }
+  }
+
+  &__font {
+    &--button {
+      font-size: em(12);
+      line-height: em(21, 12);
+    }
+  }
+}

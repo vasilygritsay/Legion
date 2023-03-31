@@ -1,0 +1,23 @@
+.pages-mint {
+  &__section {
+    &--main {
+      margin-bottom: em(143);
+
+      @include mobile {
+        margin-bottom: em(166);
+      }
+    }
+
+    &--packs {
+      margin-bottom: em(168);
+
+      @include mobile {
+        margin-bottom: em(151);
+      }
+    }
+
+    &--benefits {
+      z-index: 2;
+    }
+  }
+}

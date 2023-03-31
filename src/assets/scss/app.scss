@@ -1,1 +1,29 @@
-@import "base";
+@import "base/index.scss";
+@import "components/index.scss";
+@import "pages/index.scss";
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__page {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__footer {
+    position: relative;
+    z-index: 10;
+    margin: auto em(135) 0;
+
+    @include mobile {
+      margin: auto em(10) 0;
+    }
+  }
+}

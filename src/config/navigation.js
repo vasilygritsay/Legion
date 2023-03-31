@@ -1,29 +1,29 @@
-import routes from "@/constants/routes.js";
+import routes from '../constants/routes'
 
 export default {
   header: [
     {
-      text: "Roadmap",
-      to: routes.MINT,
+      text: 'Roadmap',
+      to: routes.MINT
     },
     {
-      text: "About",
-      to: routes.THANKS,
-    },
+      text: 'About',
+      to: routes.THANKS
+    }
   ],
 
   footer: [
     {
-      text: "Terms & Conditions",
-      to: routes.TERMS,
+      text: 'Terms & Conditions',
+      to: routes.TERMS
     },
     {
-      text: "Privacy Policy",
-      to: routes.PRIVACY,
+      text: 'Privacy Policy',
+      to: routes.PRIVACY
     },
     {
-      text: "Legal",
-      to: routes.LEGAL,
-    },
-  ],
-};
+      text: 'Legal',
+      to: routes.LEGAL
+    }
+  ]
+}
