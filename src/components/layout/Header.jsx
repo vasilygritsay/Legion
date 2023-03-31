@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import CButton from '../ui/CButton'
 import routes from '../../constants/routes'
 import navigation from '../../config/navigation'
