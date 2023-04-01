@@ -64,7 +64,7 @@
 
     @include mobile {
       position: absolute;
-      z-index: 10;
+      z-index: 1;
       left: 50%;
       transform: translateX(-50%);
       top: em(-72);

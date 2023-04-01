@@ -9,6 +9,7 @@
   &__input-wrapper {
     width: em(60);
     height: em(58);
+    flex-shrink: 0;
     background: rgba(0, 0, 0, 0.3);
     border-radius: em(6);
     padding-right: em(10);
@@ -38,15 +39,15 @@
   }
 
   &__arrow {
-    height: em(8);
+    height: em(10);
+    flex-shrink: 0;
 
-    &:first-child {
-      margin-bottom: em(6);
-    }
   }
 
   &__icon {
-    width: em(7);
+    height: em(8);
+    flex-shrink: 0;
+    display: block;
 
     &--bottom {
       transform: rotate(180deg);
