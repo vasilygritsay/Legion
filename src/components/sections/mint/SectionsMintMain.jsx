@@ -493,7 +493,11 @@ function SectionsMintMain({ className }) {
           </div>
         </div>
       </div>
-      <img className="sections-mint-main__card" src="/preview.gif" alt="card" />
+      <img
+        className="sections-mint-main__card"
+        src="/images/cards/main.jpg"
+        alt="card"
+      />
     </section>
   )
 }

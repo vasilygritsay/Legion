@@ -7,7 +7,7 @@
   }
 
   &:before {
-    background-image: url("/images/page-bg/mint-middle.png");
+    background-image: url("/images/page-bg/mint-middle.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -105,6 +105,20 @@
     width: 100%;
     height: 142%;
     object-fit: contain;
+    border-radius: em(25);
+
+    @include mobile {
+      display: none;
+      transform: translateY(-41%);
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
   }
 
   &__interrupter-title {

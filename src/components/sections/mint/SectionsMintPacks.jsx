@@ -43,6 +43,12 @@ const SectionsMintPacks = ({ className }) => (
           alt="bg"
         />
 
+        <img
+          className="sections-mint-packs__interrupter-bg sections-mint-packs__interrupter-bg--mobile"
+          src="/images/page-bg/interrupter-mobile.jpg"
+          alt="bg"
+        />
+
         <div className="sections-mint-packs__interrupter-title">
           <span className="sections-mint-packs__font sections-mint-packs__font--interrupter-title">
             Buy 50 Digital Trading Cards
