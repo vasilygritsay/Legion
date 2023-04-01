@@ -4,7 +4,7 @@ export default {
   header: [
     {
       text: 'Roadmap',
-      to: routes.MINT
+      to: '/'
     },
     {
       text: 'About',

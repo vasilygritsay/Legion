@@ -13,7 +13,12 @@ function Footer({ className }) {
       </a>
       <nav className="footer__nav">
         {navigation.footer.map((item, index) => (
-          <CButton key={index} className="footer__button" to={item.to}>
+          <CButton
+            key={index}
+            className="footer__button"
+            href={item.to}
+            target="_blank"
+          >
             <span className="footer__font footer__font--button">
               {item.text}
             </span>

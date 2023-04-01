@@ -13,7 +13,7 @@ const Header = ({ className }) => {
       <div className="header__buttons">
         <nav className="header__nav">
           {navigation.header.map((item, index) => (
-            <CButton className="header__nav-button" to={item.to} key={index}>
+            <CButton className="header__nav-button" href={item.to} key={index}>
               <span className="header__font header__font--button">
                 {item.text}
               </span>
@@ -30,11 +30,11 @@ const Header = ({ className }) => {
           </span>
         </CButton>
       </div>
-      <button className="header__menu-button">
-        <div className="header__line header__line--top" />
-        <div className="header__line header__line--middle" />
-        <div className="header__line header__line--bottom" />
-      </button>
+      {/*<button className="header__menu-button">*/}
+      {/*  <div className="header__line header__line--top" />*/}
+      {/*  <div className="header__line header__line--middle" />*/}
+      {/*  <div className="header__line header__line--bottom" />*/}
+      {/*</button>*/}
     </header>
   )
 }

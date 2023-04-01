@@ -20,6 +20,7 @@ const CButton = ({
     'c-button--withLines': withLines
   })
   const ElementType = href ? 'a' : 'button'
+  console.log(href, ElementType)
   const buttonProps = {
     ...(href ? { href } : {}),
     ...(target ? { target } : {}),

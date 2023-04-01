@@ -8,6 +8,7 @@
   flex-direction: column;
 
   &__header {
+    min-height: em(56);
     position: relative;
     z-index: 10;
   }

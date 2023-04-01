@@ -4,6 +4,7 @@
       margin-bottom: em(143);
 
       @include mobile {
+        margin-top: em(20);
         margin-bottom: em(166);
       }
     }
