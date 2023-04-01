@@ -20,6 +20,8 @@
 
     @include mobile {
       top: em(-70);
+      background-image: url("/images/page-bg/mint-middle-mobile.jpg");
+      height: 100%;
     }
   }
 
