@@ -37,42 +37,17 @@
     width: em(630);
     padding: em(47) em(120) em(50);
 
+    border: em(3) solid $color-accent;
+    border-radius: em(35);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 74px rgba(34, 245, 195, 0.15);
+    backdrop-filter: blur(5px);
+
     @include mobile {
       width: 100%;
+      border-radius: em(20);
       padding: em(30) em(26) em(40);
       margin-bottom: em(49);
-    }
-
-    &:before {
-      position: absolute;
-      left: 50%;
-      top: em(-72);
-      width: 124%;
-      height: 113%;
-      transform: translateX(-50%);
-      content: "";
-      background-image: url("/images/bg/left-bottom-corner.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 1;
-
-      @include mobile {
-        display: none;
-      }
-    }
-  }
-
-  &__bg {
-    display: none;
-
-    @include mobile {
-      position: absolute;
-      z-index: 1;
-      left: 50%;
-      transform: translateX(-50%);
-      top: em(-72);
-      width: 140%;
-      display: block;
     }
   }
 
@@ -103,10 +78,23 @@
       }
     }
 
+    &--polygon {
+      width: em(326);
+      height: em(85);
+      margin-bottom: em(20);
+    }
+
     &--buy {
       width: em(270);
       height: em(78);
       margin-bottom: em(10);
+    }
+
+    &--mint {
+      margin-top: em(40);
+      margin-bottom: em(40);
+      width: em(271);
+      height: em(85);
     }
   }
 
@@ -141,11 +129,43 @@
     width: em(368);
     position: relative;
     z-index: 2;
+    object-fit: contain;
 
     @include mobile {
       width: em(271);
       margin: 0 auto;
     }
+  }
+
+  &__loading {
+    margin-bottom: em(20);
+  }
+
+  &__icon {
+    &--polygon {
+      width: em(38);
+      flex-shrink: 0;
+    }
+  }
+
+  &__price {
+    margin-bottom: em(9);
+  }
+
+  &__price-amount {
+    margin-bottom: em(25);
+  }
+
+  &__minted {
+    margin-bottom: em(20);
+  }
+
+  &__text {
+    margin-bottom: em(20);
+  }
+
+  .css-5xe99f-MuiLinearProgress-bar1 {
+    background-color: $color-accent;
   }
 
   &__font {
@@ -171,6 +191,20 @@
       font-size: em(17);
       font-weight: 600;
       line-height: em(31, 17);
+    }
+
+    &--loading {
+      font-family: Squada One, sans-serif;
+      font-size: em(30);
+      line-height: em(30, 30);
+    }
+
+    &--accent {
+      font-family: Outfit, sans-serif;
+      font-size: em(17);
+      font-weight: 600;
+      line-height: em(31, 17);
+      color: rgba($color-white, 0.5);
     }
   }
 }

@@ -20,6 +20,7 @@ import { ethers } from 'ethers'
 import contractabi from '../../../contracts/artifacts/contractabi.json'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom'
 const NFTcontractAddress = '0x7247248F8684c142dbb96C7a78aD6e3Ba875E46E'
 function SectionsMintMain({ className }) {
   const [{ wallet }, connect, disconnect, updateBalances, setWalletModules] =
@@ -48,6 +49,7 @@ function SectionsMintMain({ className }) {
   const [locale, setLocale] = useState('en')
   const [accountCenterSize, setAccountCenterSize] = useState('normal')
   const [accountCenterExpanded, setAccountCenterExpanded] = useState(false)
+  const navigate = useNavigate()
 
   const [progress, setProgress] = React.useState(10)
 
@@ -165,6 +167,7 @@ function SectionsMintMain({ className }) {
       console.log(object)
       setData(object)
       setLoading(false)
+      navigate('/thanks')
     } catch (err) {
       setError(err)
     }
@@ -289,11 +292,6 @@ function SectionsMintMain({ className }) {
 
   return (
     <section className={classNames(className, 'sections-mint-main')}>
-      <img
-        className="sections-mint-main__bg"
-        src="/images/bg/left-bottom-corner-mobile.png"
-        alt="bg"
-      />
       <div className="sections-mint-main__content">
         <div className="sections-mint-main__container">
           <div className="sections-mint-main__title">
@@ -315,13 +313,31 @@ function SectionsMintMain({ className }) {
               </CButton>
             )}
             {wallet && connectedChain.id == '0x89' && loading && (
-              <h2>Loading...</h2>
+              <div className="sections-mint-main__loading">
+                <span className="sections-mint-main__font sections-mint-main__font--loading">
+                  Loading...
+                </span>
+              </div>
             )}
             {wallet && connectedChain.id !== '0x89' && (
-              <div className="buttonswitch" onClick={switchNetworkPOLYGON}>
-                <h2>Switch to Polygon Network</h2>
-                <img src="/assets/polygon.svg" className="buttonlogo" alt="" />
-              </div>
+              <CButton
+                className="sections-mint-main__button sections-mint-main__button--polygon"
+                theme="bordered"
+                onClick={switchNetworkPOLYGON}
+                iconLeft={
+                  <img
+                    src="/assets/polygon.svg"
+                    className="sections-mint-main__icon sections-mint-main__icon--polygon"
+                    alt=""
+                  />
+                }
+              >
+                <div className="sections-mint-main__text">
+                  <span className="sections-mint-main__font sections-mint-main__font--text">
+                    Switch to Polygon Network
+                  </span>
+                </div>
+              </CButton>
             )}
 
             {!loading && wallet && connectedChain.id == '0x89' && (
@@ -329,84 +345,93 @@ function SectionsMintMain({ className }) {
                 {data.step != 0 && data.step != null ? (
                   <>
                     <div className="cost">
-                      <h2>Price</h2>
-                      <h3>
-                        {data.cost / 10 ** 18} <span>MATIC</span>
-                      </h3>
+                      <div className="sections-mint-main__price">
+                        <span className="sections-mint-main__font sections-mint-main__font--accent">
+                          Price:
+                        </span>
+                      </div>
+                      <div className="sections-mint-main__price-amount">
+                        <span className="sections-mint-main__font sections-mint-main__font--loading">
+                          {data.cost / 10 ** 18} MATIC
+                        </span>
+                      </div>
                     </div>
 
                     <div className="progress">
-                      <h3 className="minted">
-                        Total minted &nbsp;({data.totalSupply} / 10000) -{' '}
-                        {Math.round((data.totalSupply * 100) / 10000) + '%'}
-                      </h3>
-                      <Box sx={{ width: '100%', height: '60px' }}>
-                        <LinearProgressWithLabel
-                          value={(data.totalSupply * 100) / 10000}
-                        />
-                      </Box>
+                      <div className="sections-mint-main__minted">
+                        <span className="sections-mint-main__font sections-mint-main__font--accent">
+                          Total minted &nbsp;({data.totalSupply} / 10000) -{' '}
+                          {Math.round((data.totalSupply * 100) / 10000) + '%'}
+                        </span>
+                      </div>
+                      <LinearProgressWithLabel
+                        value={(data.totalSupply * 100) / 10000}
+                      />
                     </div>
                   </>
                 ) : (
-                  <div>
-                    <h3>Sale has not started yet.</h3>
+                  <div className="sections-mint-main__text">
+                    <span className="sections-mint-main__font sections-mint-main__font--accent">
+                      Sale has not started yet.
+                    </span>
                   </div>
                 )}
 
-                <br></br>
-                <br></br>
-
                 {data.step == 1 && WL ? (
                   <div>
-                    <div className="quantitymint">
-                      <h2>Quantity</h2>
-                      <input
-                        type="number"
-                        id="quantity"
-                        min="1"
-                        max="150"
-                        step="1"
-                        value={quantity}
-                      />
-                      <div className="quantitybuttons">
-                        <div className="arrowup" onClick={valueUpWL}></div>
-                        <div className="arrowdown" onClick={valueDown}></div>
-                      </div>
-                    </div>
-                    <button className="mintbutton" onClick={whitelistmint}>
-                      MINT
-                    </button>
+                    <NumberInput
+                      className="sections-mint-main__input"
+                      value={quantity}
+                      setValue={setQuantity}
+                    >
+                      <span className="sections-mint-main__font sections-mint-main__font--text">
+                        Quantity
+                      </span>
+                    </NumberInput>
+                    <CButton
+                      className="sections-mint-main__button sections-mint-main__button--mint"
+                      theme="primary"
+                      withLines
+                      onClick={whitelistmint}
+                    >
+                      <span className="sections-mint-main__font sections-mint-main__font--connect">
+                        MINT
+                      </span>
+                    </CButton>
                   </div>
                 ) : (
                   <div></div>
                 )}
                 {data.step == 1 && !WL ? (
-                  <div>
-                    <p className="count">You are not whitelisted.</p>
+                  <div className="sections-mint-main__text">
+                    <span className="sections-mint-main__font sections-mint-main__font--accent">
+                      You are not whitelisted.
+                    </span>
                   </div>
                 ) : (
                   <div></div>
                 )}
                 {data.step == 2 && (
                   <div>
-                    <div className="quantitymint">
-                      <h2>Quantity</h2>
-                      <input
-                        type="number"
-                        id="quantity"
-                        min="1"
-                        max="150"
-                        step="1"
-                        value={quantity}
-                      />
-                      <div className="quantitybuttons">
-                        <div className="arrowup" onClick={valueUp}></div>
-                        <div className="arrowdown" onClick={valueDown}></div>
-                      </div>
-                    </div>
-                    <button className="mintbutton" onClick={mint}>
-                      MINT
-                    </button>
+                    <NumberInput
+                      className="sections-mint-main__input"
+                      value={quantity}
+                      setValue={setQuantity}
+                    >
+                      <span className="sections-mint-main__font sections-mint-main__font--text">
+                        Quantity
+                      </span>
+                    </NumberInput>
+                    <CButton
+                      className="sections-mint-main__button sections-mint-main__button--mint"
+                      theme="primary"
+                      withLines
+                      onClick={mint}
+                    >
+                      <span className="sections-mint-main__font sections-mint-main__font--connect">
+                        MINT
+                      </span>
+                    </CButton>
                   </div>
                 )}
               </div>
